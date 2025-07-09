@@ -69,13 +69,7 @@ const TrueFocus = ({
                         ref={(el) => (wordRefs.current[index] = el)}
                         className="relative text-[3rem] font-black cursor-pointer"
                         style={{
-                            filter: manualMode
-                                ? isActive
-                                    ? `blur(0px)`
-                                    : `blur(${blurAmount}px)`
-                                : isActive
-                                    ? `blur(0px)`
-                                    : `blur(${blurAmount}px)`,
+                            filter: isActive ? `blur(0px)` : `blur(${blurAmount}px)`,
                             "--border-color": borderColor,
                             "--glow-color": glowColor,
                             transition: `filter ${animationDuration}s ease`,
@@ -103,6 +97,10 @@ const TrueFocus = ({
                 style={{
                     "--border-color": borderColor,
                     "--glow-color": glowColor,
+                    willChange: "transform, width, height, opacity",
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
+                    transform: "translateZ(0)",
                 }}
             >
                 <span

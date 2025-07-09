@@ -17,6 +17,7 @@ export default function CartSidebar({ cart, onClose }) {
         </ul>
       )}
       <div className="font-semibold text-green-700">Total: ₹{cart.reduce((sum, item) => sum + item.price, 0)}</div>
+      <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition">Checkout</button>
     </aside>
   );
 } 
