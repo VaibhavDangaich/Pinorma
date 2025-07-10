@@ -5,16 +5,21 @@ export default function CompanyIntro({ onViewProducts }) {
   return (
     <section className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in-down gap-6">
       <div className="flex justify-center items-center gap-20">
-        <p className="text-5xl font-bold p-4">PINORMA :</p>
-        <TrueFocus
-          sentence="Elevate Every Surface"
-          manualMode={false}
-          blurAmount={3}
-          borderColor="yellow"
-          animationDuration={3}
-          pauseBetweenAnimations={1}
-        />
+        <p className="text-5xl font-bold p-3 pr-[-100px]">PINORAMA :</p>
+        <div className="ml-[-70px]">
+          <TrueFocus
+            sentence="Elevate Every Surface"
+            manualMode={false}
+            blurAmount={3}
+            borderColor="yellow"
+            animationDuration={3}
+            pauseBetweenAnimations={1}
 
+
+          />
+
+        </div>
+      
       </div>
      
       <div className="flex flex-wrap gap-6 justify-center w-full max-w-3xl">
