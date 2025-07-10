@@ -10,8 +10,13 @@ export default function CartSidebar({ cart, onClose }) {
         <ul className="mb-2">
           {cart.map((item, idx) => (
             <li key={idx} className="flex justify-between text-sm mb-1">
-              <span className="text-green-900">{item.name}</span>
-              <span className="text-gray-800">₹{item.price}</span>
+              <div className="flex-1">
+                <span className="text-green-900 font-medium">{item.displayName || item.name}</span>
+                {item.selectedSize && (
+                  <div className="text-xs text-gray-600">Size: {item.selectedSize.size}</div>
+                )}
+              </div>
+              <span className="text-gray-800 flex-shrink-0 ml-2">₹{item.price}</span>
             </li>
           ))}
         </ul>
