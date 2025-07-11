@@ -17,7 +17,6 @@ export default function Home() {
   const [cartOpen, setCartOpen] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
   const [products, setProducts] = useState([]);
-  const [isDark, setIsDark] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -26,13 +25,11 @@ export default function Home() {
       .then((data) => setProducts(data));
   }, []);
 
+  // Always apply dark mode
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("my-dark");
-    } else {
-      document.documentElement.classList.remove("my-dark");
-    }
-  }, [isDark]);
+    document.documentElement.classList.add("my-dark");
+    return () => document.documentElement.classList.remove("my-dark");
+  }, []);
 
   const addToCart = (product) => {
     setCart((prev) => [...prev, product]);
@@ -43,20 +40,35 @@ export default function Home() {
     setEnquiry({ ...enquiry, [e.target.name]: e.target.value });
   };
 
-  const handleEnquirySubmit = (e) => {
+  const handleEnquirySubmit = async (e) => {
     e.preventDefault();
-    setEnquirySent(true);
-    setTimeout(() => {
-      setShowEnquiry(false);
-      setEnquirySent(false);
-      setEnquiry({ name: "", email: "", message: "" });
-    }, 2000);
+    try {
+      const res = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(enquiry),
+      });
+      if (res.ok) {
+        setEnquirySent(true);
+        setTimeout(() => {
+          setShowEnquiry(false);
+          setEnquirySent(false);
+          setEnquiry({ name: "", email: "", message: "" });
+        }, 2000);
+      } else {
+        alert("Failed to send enquiry. Please try again.");
+      }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100 flex flex-col items-center px-4 overflow-y-hidden relative">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-full bg-repeat opacity-20 z-0 h-full w-full">
+        <ParticleRing></ParticleRing>
+        <ParticleRing></ParticleRing>
         <ParticleRing></ParticleRing>
       </div>
        
@@ -83,8 +95,6 @@ export default function Home() {
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }, 100);
           }}
-          onToggleDark={() => setIsDark((d) => !d)}
-          isDark={isDark}
         />
         <div className="w-full max-w-4xl mt-24">
           {!showProducts ? (

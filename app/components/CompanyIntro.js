@@ -43,7 +43,7 @@ export default function CompanyIntro({ onViewProducts }) {
         <li className="bg-white/80 rounded-full px-4 py-2 shadow font-semibold">Trusted by Businesses</li>
       </ul>
       <button
-        className="bg-blue-600 text-white px-8 py-3 hover:scale-110 cursor-pointer duration-300 ease-in-out rounded-full shadow-lg hover:bg-blue-700 transition text-xl font-bold animate-fade-in-up"
+        className="bg-blue-600 text-white px-8 py-3 mb-[100px] hover:scale-110 cursor-pointer duration-300 ease-in-out rounded-full shadow-lg hover:bg-blue-700 transition text-xl font-bold animate-fade-in-up"
         onClick={onViewProducts}
       >
         View Products
