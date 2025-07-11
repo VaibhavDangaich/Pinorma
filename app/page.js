@@ -91,8 +91,7 @@ export default function Home() {
           onProducts={() => {
             setShowProducts(true);
             setTimeout(() => {
-              const el = document.getElementById("products");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }, 100);
           }}
         />
