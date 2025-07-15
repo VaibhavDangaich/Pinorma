@@ -16,7 +16,7 @@ export default function Navbar({ cartCount, onEnquireClick, onCartClick, onHome,
       {/* Sidebar */}
       <div className="fixed top-0 right-0 w-64 h-full shadow-2xl pt-20 px-6 py-8 flex flex-col gap-6 items-center justify-start rounded-l-2xl animate-fade-in-down border-l border-white/20 z-50 bg-[#18181b]/50 backdrop-blur-xl text-white">
         <button className="absolute top-6 right-6 text-gray-300 hover:text-white text-3xl z-10" onClick={() => setSidebarOpen(false)}>&times;</button>
-        <Link href="/" className="text-2xl font-extrabold bg-gradient-to-r from-green-700 via-blue-500 to-green-400 bg-clip-text text-transparent mb-4" onClick={() => setSidebarOpen(false)}>Pinorma</Link>
+        <Link href="/" className="text-2xl font-extrabold bg-gradient-to-r from-green-700 via-blue-500 to-green-400 bg-clip-text text-transparent mb-4" onClick={() => setSidebarOpen(false)}>Pinorama</Link>
         <button onClick={() => { setSidebarOpen(false); onHome(); }} className="text-left text-lg text-gray-100 hover:text-blue-400 transition w-full">Home</button>
         <button onClick={() => { setSidebarOpen(false); onProducts(); }} className="text-left text-lg text-gray-100 hover:text-blue-400 transition w-full">Products</button>
         <button onClick={() => { setSidebarOpen(false); onEnquireClick(); }} className="text-left text-lg text-gray-100 hover:text-blue-400 transition w-full">Enquire</button>
