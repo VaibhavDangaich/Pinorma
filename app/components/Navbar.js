@@ -69,7 +69,7 @@ export default function Navbar({ cartCount, onEnquireClick, onCartClick, onHome,
             <button onClick={() => { setSidebarOpen(false); onProducts(); }} className="text-left text-lg text-gray-100 hover:text-blue-400 transition w-full">Products</button>
             <button onClick={() => { setSidebarOpen(false); onEnquireClick(); }} className="text-left text-lg text-gray-100 hover:text-blue-400 transition w-full">Enquire</button>
             <div className="relative cursor-pointer w-full" onClick={() => { setSidebarOpen(false); onCartClick(); }}>
-              <span className="text-lg text-gray-100">Cart</span>
+              <span className="hidden text-lg text-gray-100">Cart</span>
               {cartCount > 0 && (
                 <span className="ml-2 bg-blue-600 text-white text-xs rounded-full px-1.5 py-0.5">{cartCount}</span>
               )}
