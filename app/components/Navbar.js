@@ -34,7 +34,7 @@ export default function Navbar({ cartCount, onEnquireClick, onCartClick, onHome,
   return (
     <nav className="w-full fixed left-0 top-0 z-30 bg-white/80 dark:bg-black/70 backdrop-blur shadow flex items-center justify-between px-6 py-3">
       <Link href="/" className="flex items-center gap-2 cursor-pointer" prefetch={false}>
-        <span className="text-2xl font-extrabold bg-gradient-to-r from-green-700 via-blue-500 to-green-400 bg-clip-text text-transparent animate-fade-in-down">Pinorma</span>
+        <span className="text-2xl font-extrabold bg-gradient-to-r from-green-700 via-blue-500 to-green-400 bg-clip-text text-transparent animate-fade-in-down">Pinorama</span>
       </Link>
       {/* Large screen nav */}
       <div className="hidden sm:flex gap-6 items-center text-gray-900 font-semibold">
