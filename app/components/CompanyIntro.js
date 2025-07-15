@@ -4,7 +4,7 @@ import Link from "next/link";
 import TrueFocus from "../ui/components/TrueFocus";
 import ScrollVelocity from "../ui/components/ScrollVelocity";
 
-export default function CompanyIntro({ onViewProducts }) {
+export default function CompanyIntro({ onViewProducts, onEnquireClick = () => {} }) {
   return (
     <section className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in-down gap-6">
       <div className=" hidden lg:flex justify-center items-center gap-20 pointer-events-none">
@@ -42,6 +42,16 @@ export default function CompanyIntro({ onViewProducts }) {
         <div className="text-2xl sm:text-3xl font-extrabold text-center bg-gradient-to-r from-blue-400 via-green-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg animate-fade-in-up animate-pulse px-4 py-2 rounded-lg">
           Click <span className="font-bold text-blue-300">Enquire</span> to connect with us for <span className="text-green-300">premium cleaning essentials</span> at an <span className="text-blue-200">affordable price</span>!
         </div>
+      </div>
+      {/* Enquire Now Button */}
+      <div className="w-full flex justify-center mb-8">
+        <button
+          onClick={onEnquireClick}
+          className="relative px-10 py-4 text-2xl font-bold rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-blue-500/40 focus:outline-none focus:ring-4 focus:ring-blue-400/30"
+          style={{ letterSpacing: '0.05em' }}
+        >
+          <span className="inline-block">Enquire Now !!</span>
+        </button>
       </div>
      
       <div className="flex flex-wrap gap-6 justify-center w-full max-w-3xl">

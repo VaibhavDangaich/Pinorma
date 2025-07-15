@@ -97,7 +97,7 @@ export default function Home() {
         />
         <div className="w-full max-w-4xl mt-24">
           {!showProducts ? (
-            <CompanyIntro onViewProducts={() => setShowProducts(true)} />
+            <CompanyIntro onViewProducts={() => setShowProducts(true)} onEnquireClick={() => setShowEnquiry(true)} />
           ) : (
             <ProductGrid products={products} onAddToCart={addToCart} setProducts={setProducts} />
           )}
