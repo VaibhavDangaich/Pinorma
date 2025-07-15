@@ -1,7 +1,7 @@
 "use client";
 export default function EnquiryModal({ enquiry, onChange, onSubmit, onClose, enquirySent }) {
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-30">
+    <div className="fixed inset-0 bg-white flex items-center justify-center z-30">
       <form
         onSubmit={onSubmit}
         className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md flex flex-col gap-4 relative"

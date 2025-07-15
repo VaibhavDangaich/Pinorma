@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import TrueFocus from "../ui/components/TrueFocus";
+import ScrollVelocity from "../ui/components/ScrollVelocity";
+
 export default function CompanyIntro({ onViewProducts }) {
   return (
     <section className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in-down gap-6">
-      <div className="flex justify-center items-center gap-20">
+      <div className=" hidden lg:flex justify-center items-center gap-20 pointer-events-none">
         <p className="text-5xl font-bold p-3 pr-[-100px]">PINORAMA :</p>
         <div className="ml-[-70px]">
           <TrueFocus
@@ -19,7 +22,26 @@ export default function CompanyIntro({ onViewProducts }) {
           />
 
         </div>
+       
       
+      </div>
+      <div className="block lg:hidden w-full z-20">
+        <ScrollVelocity
+
+          texts={['PINORAMA', 'Elevate Every Surface']}
+
+          velocity={50}
+
+          className="custom-scroll-text z-20"
+
+        />
+
+      </div>
+      {/* Cool Enquire Callout */}
+      <div className="w-full flex justify-center mb-6">
+        <div className="text-2xl sm:text-3xl font-extrabold text-center bg-gradient-to-r from-blue-400 via-green-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg animate-fade-in-up animate-pulse px-4 py-2 rounded-lg">
+          Click <span className="font-bold text-blue-300">Enquire</span> to connect with us for <span className="text-green-300">premium cleaning essentials</span> at an <span className="text-blue-200">affordable price</span>!
+        </div>
       </div>
      
       <div className="flex flex-wrap gap-6 justify-center w-full max-w-3xl">
@@ -42,12 +64,16 @@ export default function CompanyIntro({ onViewProducts }) {
         <li className="bg-white/80 rounded-full px-4 py-2 shadow font-semibold">Fast Delivery</li>
         <li className="bg-white/80 rounded-full px-4 py-2 shadow font-semibold">Trusted by Businesses</li>
       </ul>
-      <button
-        className="bg-blue-600 text-white px-8 py-3 mb-[100px] hover:scale-110 cursor-pointer duration-300 ease-in-out rounded-full shadow-lg hover:bg-blue-700 transition text-xl font-bold animate-fade-in-up"
-        onClick={onViewProducts}
-      >
-        View Products
-      </button>
+      <Link href="/products">
+        <button
+          className="bg-blue-600 text-white px-8 py-3 mb-[100px] hover:scale-110 cursor-pointer duration-300 ease-in-out rounded-full shadow-lg hover:bg-blue-700 transition text-xl font-bold animate-fade-in-up"
+          
+        >
+          View Products
+
+        </button>
+      </Link>
+      
     </section>
   );
 } 

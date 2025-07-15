@@ -35,7 +35,7 @@ export default function ProductGrid({ products, onAddToCart }) {
           className="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-green-700 via-blue-500 to-green-400 bg-clip-text text-transparent drop-shadow-lg mb-2"
           style={{ animation: 'fadeInDown 1s cubic-bezier(0.23, 1, 0.32, 1)' }}
         >
-          Pinorma Products
+          Pinorama Products
         </h1>
         <p
           className="text-xl sm:text-2xl text-white font-medium mb-4 text-center animate-fade-in-up"
@@ -56,7 +56,7 @@ export default function ProductGrid({ products, onAddToCart }) {
             <div className="flex flex-col items-center w-full mt-auto">
               {/* Size Selection */}
               <div className="w-full mb-3">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Select Size:</label>
+                <label className="block text-sm font-medium text-yellow-500 mb-1">Select Size:</label>
                 <select 
                   value={selectedSizes[product._id]?.size || ""} 
                   onChange={(e) => {
@@ -65,7 +65,7 @@ export default function ProductGrid({ products, onAddToCart }) {
                   }}
                   className="w-full border rounded px-3 py-1 text-sm"
                 >
-                  <option value="">Choose size...</option>
+                  <option value="" >Choose size...</option>
                   {product.sizes && product.sizes.map((size, index) => (
                     <option key={index} value={size.size}>
                       {size.size} - ₹{size.price}
@@ -76,7 +76,7 @@ export default function ProductGrid({ products, onAddToCart }) {
               
               {/* Price Display */}
               {selectedSizes[product._id] && (
-                <div className="text-green-700 font-bold mb-2 text-lg">
+                <div className="text-green-400 font-bold mb-2 text-xl">
                   ₹{selectedSizes[product._id].price}
                 </div>
               )}
