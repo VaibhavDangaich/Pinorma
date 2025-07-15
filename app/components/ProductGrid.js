@@ -38,7 +38,7 @@ export default function ProductGrid({ products, onAddToCart }) {
           Pinorma Products
         </h1>
         <p
-          className="text-xl sm:text-2xl text-gray-700 font-medium mb-4 text-center animate-fade-in-up"
+          className="text-xl sm:text-2xl text-white font-medium mb-4 text-center animate-fade-in-up"
           style={{ animation: 'fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1)' }}
         >
           Explore our full range of cleaning essentials below.
@@ -50,7 +50,7 @@ export default function ProductGrid({ products, onAddToCart }) {
             <div className="flex flex-col items-center w-full">
               <img src={product.image} alt={product.name} className="w-32 h-32 object-cover rounded mb-2" />
               <h2 className="text-xl font-semibold text-green-900 mb-1 text-center">{product.name}</h2>
-              <p className="text-gray-600 text-sm mb-2 text-center">{product.description}</p>
+              <p className="text-white text-sm mb-2 text-center">{product.description}</p>
             </div>
             
             <div className="flex flex-col items-center w-full mt-auto">
@@ -82,7 +82,7 @@ export default function ProductGrid({ products, onAddToCart }) {
               )}
               
               <button
-                className={`px-4 py-1 rounded transition ${
+                className={`hidden px-4 py-1 rounded transition ${
                   selectedSizes[product._id] 
                     ? 'bg-blue-600 text-white hover:bg-blue-700' 
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
